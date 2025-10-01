@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nama": "Coca Cola", "harga": 8000 },
+  { "id": 2, "nama": "Teh Botol", "harga": 7000 },
+  { "id": 3, "nama": "Kopi Susu", "harga": 5000 },
+  { "id": 4, "nama": "Mojito", "harga": 6000 },
+  { "id": 5, "nama": "Jhosua", "harga": 10000 }
+]
