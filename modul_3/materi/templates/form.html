@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Formulir Pengguna</h1>
+      <form method="POST" action="/form">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Masukkan Nama:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nama"
+            name="nama"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Alamat Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="umur" class="form-label">Umur Anda:</label>
+          <input
+            type="umur"
+            class="form-control"
+            id="umur"
+            name="umur"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="agama" class="form-label">Agama:</label>
+          <input
+            type="agama"
+            class="form-control"
+            id="agama"
+            name="agama"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success">Kirim</button>
+      </form>
+      <a href="/" class="btn btn-secondary mt-3">Kembali ke Home</a>
+    </div>
+  </body>
+</html>
