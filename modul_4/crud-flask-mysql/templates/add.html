@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tambah Data Barang</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #eef2f7;
+        margin: 40px;
+      }
+      form {
+        width: 300px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #aaa;
+      }
+      h2 {
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tambah Barang Baru</h2>
+    <form action="/add" method="POST">
+      <input
+        type="text"
+        name="nama_barang"
+        placeholder="Nama Barang"
+        required
+      />
+      <input type="number" name="jumlah" placeholder="Jumlah" required />
+      <input
+        type="number"
+        step="0.01"
+        name="harga"
+        placeholder="Harga"
+        required
+      />
+      <button type="submit">Simpan</button>
+    </form>
+    <a href="/">⬅ Kembali</a>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Data Barang</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #eef2f7;
+        margin: 40px;
+      }
+      form {
+        width: 300px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #aaa;
+      }
+      h2 {
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+      }
+      button {
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Edit Barang</h2>
+    <form action="/update" method="POST">
+      <input type="hidden" name="id" value="{{ data[0] }}" />
+      <input type="text" name="nama_barang" value="{{ data[1] }}" required />
+      <input type="number" name="jumlah" value="{{ data[2] }}" required />
+      <input
+        type="number"
+        step="0.01"
+        name="harga"
+        value="{{ data[3] }}"
+        required
+      />
+      <button type="submit">Simpan Perubahan</button>
+    </form>
+    <a href="/">⬅ Kembali</a>
+  </body>
+</html>

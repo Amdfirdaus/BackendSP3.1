@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daftar Stok Barang</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 40px;
+        background: #f7f9fc;
+      }
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .add-btn {
+        background-color: #28a745;
+        color: white;
+      }
+      .edit-btn {
+        background-color: #ffc107;
+        color: black;
+      }
+      .delete-btn {
+        background-color: #dc3545;
+        color: white;
+      }
+      h2 {
+        text-align: center;
+      }
+      .top {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h2>Daftar Stok Barang</h2>
+      <a class="add-btn" href="/tambah">+ Tambah Barang</a>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nama Barang</th>
+        <th>Jumlah</th>
+        <th>Harga</th>
+        <th>Aksi</th>
+      </tr>
+      {% for item in stok %}
+      <tr>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td>
+          <a class="edit-btn" href="/edit/{{ item[0] }}">Edit</a>
+          <a
+            class="delete-btn"
+            href="/delete/{{ item[0] }}"
+            onclick="return confirm('Yakin hapus data ini?')"
+            >Hapus</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
