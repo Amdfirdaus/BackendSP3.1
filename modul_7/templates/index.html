@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Barang</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Data Barang</h1>
+    <a href="/add" class="btn">Tambah Barang</a>
+
+    <table>
+      <tr>
+        <th>Kode</th>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Aksi</th>
+      </tr>
+
+      {% for b in barang %}
+      <tr>
+        <td>{{ b.kode }}</td>
+        <td>{{ b.nama }}</td>
+        <td>{{ b.harga }}</td>
+        <td>{{ b.jumlah }}</td>
+        <td>
+          <a href="/edit/{{ b.kode }}">Edit</a> |
+          <a href="/delete/{{ b.kode }}" onclick="return confirm('Hapus data?')"
+            >Hapus</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
