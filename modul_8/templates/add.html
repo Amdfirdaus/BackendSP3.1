@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tambah Barang</title>
+  </head>
+  <body>
+    <h1>Tambah Barang</h1>
+
+    <form action="/add" method="POST" enctype="multipart/form-data">
+      <label>Kode:</label><br />
+      <input type="text" name="kode" required /><br /><br />
+
+      <label>Nama:</label><br />
+      <input type="text" name="nama" required /><br /><br />
+
+      <label>Harga:</label><br />
+      <input type="number" name="harga" required /><br /><br />
+
+      <label>Jumlah:</label><br />
+      <input type="number" name="jumlah" required /><br /><br />
+
+      <label>Gambar:</label><br />
+      <input type="file" name="gambar" /><br /><br />
+
+      <button type="submit">Simpan</button>
+    </form>
+
+    <br /><a href="/">← Kembali</a>
+  </body>
+</html>

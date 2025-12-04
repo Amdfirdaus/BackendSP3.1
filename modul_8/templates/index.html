@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Barang</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      img {
+        width: 80px;
+      }
+      .btn {
+        padding: 8px 12px;
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+      }
+      .add-btn {
+        background: green;
+      }
+      .edit-btn {
+        background: orange;
+      }
+      .delete-btn {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Data Barang</h1>
+
+    <a href="/add" class="btn add-btn">+ Tambah Barang</a>
+    <br /><br />
+
+    <table>
+      <tr>
+        <th>Kode</th>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Gambar</th>
+        <th>Aksi</th>
+      </tr>
+
+      {% for b in data %}
+      <tr>
+        <td>{{ b.kode }}</td>
+        <td>{{ b.nama }}</td>
+        <td>Rp {{ b.harga }}</td>
+        <td>{{ b.jumlah }}</td>
+        <td>
+          {% if b.gambar %}
+          <img src="/static/images/{{ b.gambar }}" />
+          {% else %} (tidak ada) {% endif %}
+        </td>
+        <td>
+          <a href="/edit/{{ b._id }}" class="btn edit-btn">Edit</a>
+          <a
+            href="/delete/{{ b._id }}"
+            class="btn delete-btn"
+            onclick="return confirm('Hapus barang ini?')"
+            >Hapus</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

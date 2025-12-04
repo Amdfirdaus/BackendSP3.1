@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Barang</title>
+  </head>
+  <body>
+    <h1>Edit Barang</h1>
+
+    <form
+      action="/edit/{{ data._id }}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label>Kode (tidak bisa diubah):</label><br />
+      <input type="text" value="{{ data.kode }}" disabled /><br /><br />
+
+      <label>Nama:</label><br />
+      <input
+        type="text"
+        name="nama"
+        value="{{ data.nama }}"
+        required
+      /><br /><br />
+
+      <label>Harga:</label><br />
+      <input
+        type="number"
+        name="harga"
+        value="{{ data.harga }}"
+        required
+      /><br /><br />
+
+      <label>Jumlah:</label><br />
+      <input
+        type="number"
+        name="jumlah"
+        value="{{ data.jumlah }}"
+        required
+      /><br /><br />
+
+      <label>Gambar sekarang:</label><br />
+      <img src="/static/images/{{ data.gambar }}" width="120" /><br /><br />
+
+      <label>Ganti gambar (opsional):</label><br />
+      <input type="file" name="gambar" /><br /><br />
+
+      <button type="submit">Update</button>
+    </form>
+
+    <br /><a href="/">← Kembali</a>
+  </body>
+</html>
